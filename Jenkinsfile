@@ -7,12 +7,12 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                checkout scm
+                git url:'https://github.com/sibeshpatel9490/jenkinsdemo3.git', branch:'main'
             }
         }
         stage('Install Dependencies') {
             steps {
-                bat " ${env.PYTHON} -m pip install -r requirements.txt"
+                bat "%PYTHON% -m pip install -r requirements.txt"
             }
         }
         stage('Extract Data') {
